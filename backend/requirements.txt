@@ -4,6 +4,7 @@ pytest-cov
 pylint
 python-dateutil
 pandas
+wheel
 numpy
 fpdf
 nbval==0.11.0
