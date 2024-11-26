@@ -7,7 +7,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/universal:2-focal
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    python3.9-venv \
+    python3.8-venv \
     gcc 
 
    
