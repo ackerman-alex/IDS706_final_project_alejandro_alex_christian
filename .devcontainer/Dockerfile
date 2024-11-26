@@ -5,9 +5,11 @@ FROM mcr.microsoft.com/vscode/devcontainers/universal:2-focal
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
-RUN apt-get update && apt-get -y install --no-install-recommends \
-   python3.10-venv \
-   gcc 
+RUN apt-get update && \
+    apt-get install -y python3.10 python3-pip python3.10-distutils gcc && \
+    python3.10 -m ensurepip && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
    
 ARG USER="codespace"
 ARG VENV_PATH="/home/${USER}/venv"
